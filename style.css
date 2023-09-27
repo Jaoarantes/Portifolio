@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+:root{
+    --cor00: #ffffff;
+    --cor01: #080D1F;
+    --cor02: #01010e55;
+    --cor03: #5D66EE;
+    --cor04: #1523EB;
+    --cor05: #111CB8;
+}
+
+*{
+    font-family: 'Lato', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: var(--cor01);
+    color: var(--cor00);
+}
+
+strong{
+    color: var(--cor03);
+}
+
+header{
+    background-color: var(--cor02);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.245);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+}
+
+nav > a{
+    text-decoration: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.2em;
+    
+}
+
+nav > a:hover{
+    color: var(--cor05);
+    text-decoration: underline;
+    transition:  0.5s;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+section{
+    padding: 1rem;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.apresentação > h1{
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.apresentação > p{
+    font-size: 2em;
+}
+
+button{
+    width: 200px;
+    background-color: #111cb865;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: #111CB8;
+    transition: 1s;
+}
+
+.Saber-mais > button {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid transparent;
+    font-size: 1.2em;
+}
+
+.minha-img{
+    width: 400px;
+    height: 450px;
+    border-radius: 50%;
+}
+
+.Experiência{
+    background-color: var(--cor03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-size: 2em;
+    font-weight: ;
+}
+
+.my-exp{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.my-exp > p {
+    padding: 30px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.my-exp > p:hover{
+    transition: .5s;
+    cursor: pointer;
+    color: #000000;
+}
+
+
+@media screen and (max-width: 778px){
+   
+}
+
+
+
+
+footer{
+    height: 100px;
+    background-color: #01010e;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > p{
+    color: var(--cor00);
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.icones_redes > a > svg{
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.icones_redes > a > svg:hover{
+    color: var(--cor04);
+    text-decoration: none;
+}
+
+.icone_github,.icone_wpp,.icone_email,.icone_linkedin{
+    text-decoration: none;
+}

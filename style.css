@@ -37,6 +37,23 @@ header{
     height: 90px;
 }
 
+.icone{
+    transform: translate(0px);
+    animation: float 6s ease-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(5px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
+
 nav > a{
     text-decoration: none;
     padding: 15px;
@@ -81,7 +98,7 @@ section{
 
 button{
     width: 200px;
-    background-color: #111cb865;
+    background-color: var(--cor03);
     border-radius: 5px;
     cursor: pointer;
     height: 30px;
@@ -110,12 +127,20 @@ button:hover{
     background-color: var(--cor03);
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.Experiência > div{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .title{
     font-size: 2em;
-    font-weight: ;
+    color: #000000;
+    font-weight: bolder;
 }
 
 .my-exp{
@@ -136,6 +161,55 @@ button:hover{
     color: #000000;
 }
 
+.Sobre{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sobre > h2{
+    font-size: 3em;
+    color: #5D66EE;
+    padding: 20px;
+}
+
+.Sobre > div{   
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 1.2em;
+}
+
+.Projetos{
+    background-color: var(--cor03) ;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.Projetos > h2{
+    color: #000000;
+    padding: 30px;
+    font-size: 2em;
+}
+
+
+.Projetos > p{
+    font-size: 1.5em;
+}
+
+
+.Projetos > p:hover{
+    transition: .5s;
+    cursor: pointer;
+    color: #000000;
+}
+
+
+
 
 @media screen and (max-width: 778px){
    
@@ -146,7 +220,7 @@ button:hover{
 
 footer{
     height: 100px;
-    background-color: #01010e;
+    background-color: var(--cor01);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -154,7 +228,7 @@ footer{
 }
 
 footer > p{
-    color: var(--cor00);
+    color: var(--cor0);
     font-size: 1.3em;
     font-weight: bolder;
 }

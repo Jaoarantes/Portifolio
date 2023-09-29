@@ -144,8 +144,6 @@ button:hover{
     cursor: pointer;
 }
 
-
-
 .icons-skills{
     display: flex;
     flex-flow: row wrap;
@@ -298,4 +296,28 @@ footer > p{
 
 .icone_github,.icone_wpp,.icone_email,.icone_linkedin{
     text-decoration: none;
+}
+
+@media (max-width: 770px) {
+    header{
+        height: 180px;
+        padding: 10px;
+    }
+    
+    .icone{
+        font-size: 1.2em;
+    }
+
+    header > nav > a{
+        font-size: 1.6em;
+    }
+
+    footer{
+        height: 200px;
+    }
+
+    .bi-github,.bi-whatsapp,.bi-envelope,.bi-linkedin{
+        width: 120px;
+        height: 50px;
+    }
 }

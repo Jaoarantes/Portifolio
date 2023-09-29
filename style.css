@@ -128,7 +128,7 @@ button:hover{
 }
 
 .Experiência{
-    background-color: var(--cor03);
+    background-color: #5d67ee6e;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -244,7 +244,7 @@ button:hover{
 }
 
 .Projetos{
-    background-color: var(--cor03) ;
+    background-color: #5d67ee6e;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;

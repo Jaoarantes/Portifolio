@@ -34,8 +34,12 @@ header{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 90px;
+    height: 110px;
 }
+
+header > nav > a{
+    font-size: 1.3em;
+}   
 
 .icone{
     transform: translate(0px);
@@ -268,7 +272,7 @@ button:hover{
 }
 
 footer{
-    height: 100px;
+    height: 130px;
     background-color: var(--cor01);
     display: flex;
     flex-flow: row wrap;
@@ -298,7 +302,7 @@ footer > p{
     text-decoration: none;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 770px) {
     header{
         height: 180px;
         padding: 10px;
@@ -320,4 +324,8 @@ footer > p{
         width: 120px;
         height: 50px;
     }
+}
+
+hr{
+    margin: 0px 65px 0px 65px;
 }

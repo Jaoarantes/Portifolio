@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,300&display=swap');
 
 :root{
     --cor00: #ffffff;
@@ -12,7 +12,7 @@
 }
 
 *{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 0px;
     margin: 0px;
 }
@@ -151,7 +151,7 @@ button:hover{
 
 .my-exp > p {
     padding: 30px;
-    font-size: 1.5em;
+    font-size: 1.1em;
     color: #fff;
 }
 
@@ -177,7 +177,8 @@ button:hover{
 .Sobre > div{   
     display: flex;
     flex-flow: column wrap;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    letter-spacing: 1.5px;
 }
 
 .Projetos{
@@ -198,7 +199,7 @@ button:hover{
 
 
 .Projetos > p{
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 

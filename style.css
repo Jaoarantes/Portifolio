@@ -138,27 +138,87 @@ button:hover{
 }
 
 .title{
-    font-size: 2em;
-    color: #000000;
+    font-size: 3em;
+    color: var(--cor01);
     font-weight: bolder;
-}
-
-.my-exp{
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-}
-
-.my-exp > p {
-    padding: 30px;
-    font-size: 1.1em;
-    color: #fff;
-}
-
-.my-exp > p:hover{
-    transition: .5s;
     cursor: pointer;
-    color: #000000;
+}
+
+
+
+.icons-skills{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.html{
+    background-color: var(--cor01);
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+    box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+}
+
+.css{
+    background-color: var(--cor01);
+    border-radius: 10px;
+    width: 150px;
+    margin: 50px;
+    box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+}
+
+.js{
+    background-color: var(--cor01);
+    border-radius: 10px;
+    width: 150px;
+    margin: 50px;
+    box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mysql{
+    background-color: var(--cor01);
+    border-radius: 10px;
+    width: 150px;
+    margin: 50px;
+    box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+}
+
+.html > p{
+    text-align: center;
+}
+
+.css > p{
+    text-align: center;
+}
+
+.js > p{
+    text-align: center;
+}
+
+.mysql > p{
+    text-align: center;
 }
 
 .Sobre{
@@ -192,9 +252,9 @@ button:hover{
 }
 
 .Projetos > h2{
-    color: #000000;
+    color: var(--cor01);
     padding: 30px;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 
@@ -208,16 +268,6 @@ button:hover{
     cursor: pointer;
     color: #000000;
 }
-
-
-
-
-@media screen and (max-width: 778px){
-   
-}
-
-
-
 
 footer{
     height: 100px;

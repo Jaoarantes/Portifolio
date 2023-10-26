@@ -369,12 +369,12 @@ footer > p{
         padding: 10px;
     }
     
-    .icone{
-        font-size: 1.2em;
+    header > nav > a{
+        font-size: 1.5em;
     }
 
-    header > nav > a{
-        font-size: 1.6em;
+    .contato{
+        padding-left: 40%;
     }
 
     footer{
@@ -391,7 +391,7 @@ hr{
     margin: 0px 65px 0px 65px;
 }
 
-#btnVoltarTopo {
+#voltartopo {
     display: none; 
     position: fixed; 
     bottom: 10px; 
@@ -407,6 +407,7 @@ hr{
     font-size: 15px;
 }
 
-#btnVoltarTopo:hover {
+#voltartopo:hover {
     background-color: var(--cor03);
 }
+

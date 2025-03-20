@@ -303,6 +303,9 @@ textarea {
         margin-right: auto;
         margin-bottom: 30px;
     }
+    .minha-foto{
+        height: 360px;
+    }
     .titulo h1{
         font-size: 45px;
     }

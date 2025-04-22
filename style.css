@@ -1,12 +1,124 @@
+:root {
+    --bg-color: #0D1826;
+    --text-color: #fff;
+    --heading-primary: #A68A56;
+    --heading-secondary: #6A6B6E;
+    --card-bg: #f2f2f2;
+    --card-text: #333;
+    --accent-color: #3805A6;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --heading-primary: #3805A6;
+    --heading-secondary: #555;
+    --card-bg: #fff;
+    --card-text: #333;
+    --accent-color: #A68A56;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 *{
     margin: 0px;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Tema switch toggle */
+.theme-switch {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    z-index: 10;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    overflow: hidden;
+}
+
+#theme-toggle:checked + .toggle-label {
+    background-color: var(--bg-color);
+}
+
+.toggle-icon {
+    position: absolute;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Ícone da lua (aparece no modo claro) */
+.toggle-icon:first-of-type {
+    opacity: 0;  /* Escondido por padrão (tema escuro) */
+    transform: rotate(90deg) scale(0);
+    color: #333;
+}
+
+/* Ícone do sol (aparece no modo escuro) */
+.toggle-icon:last-of-type {
+    opacity: 1;  /* Visível por padrão (tema escuro) */
+    transform: rotate(0) scale(1);
+    color: #fff;
+}
+
+/* Quando o tema é claro, mostra a lua e esconde o sol */
+#theme-toggle:checked + .toggle-label .toggle-icon:first-of-type {
+    opacity: 1;  /* Mostra a lua no tema claro */
+    transform: rotate(0) scale(1);
+}
+
+#theme-toggle:checked + .toggle-label .toggle-icon:last-of-type {
+    opacity: 0;  /* Esconde o sol no tema claro */
+    transform: rotate(-90deg) scale(0);
+}
+
 body{
-    background-color: #0D1826;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     margin-right: 0px;
+    transition: background-color 0.3s ease;
 }
 html{
     scroll-behavior: smooth;
@@ -21,6 +133,8 @@ html{
     display: flex;
     flex-direction: column;
     border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-out;
 }
 .image-perfil{
     background: linear-gradient(to bottom, #0D1826,#3805A6);
@@ -112,17 +226,22 @@ html{
     max-width: calc(100% - 520px);
 }
 .titulo-desenvolvedor{
-    color: #A68A56;
+    color: var(--heading-primary);
     font-size: 80px;
+    animation: slideInLeft 0.8s ease forwards;
 }
 .titulo-web{
-    color: #6A6B6E;
+    color: var(--heading-secondary);
     font-size: 80px;
+    animation: slideInLeft 0.8s ease forwards;
 }
 .sobre-min p {
-    color: #fff;
+    color: var(--text-color);
     padding-left: 5px;
     font-size: 19px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
 }
 .tecnologias{
     margin-left: 520px; 
@@ -132,7 +251,7 @@ html{
     gap: 20px;
 }
 .tecnologias div{
-    background-color: #f2f2f2;
+    background-color: var(--card-bg);
     margin: 5px 100px 50px 5px;
     width: 150px;
     height: 150px;
@@ -140,6 +259,11 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.4s ease;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i, 0));
+    opacity: 0;
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 .html:hover{
     background-color: #E65100;
@@ -170,78 +294,114 @@ html{
     width: 700px;
     max-width: 90%; 
     height: 200px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     cursor: pointer;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    position: relative;
 }
+
+.projeto01:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 24, 38, 0.4), rgba(56, 5, 166, 0.1));
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.projeto01:hover:before {
+    opacity: 1;
+}
+
 .projeto01 img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
 }
+
+.projeto01:hover img {
+    transform: scale(1.1);
+}
+
 .projeto01 svg {
     width: 48px;
     fill: #333;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-  
+
 .projeto01:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(166, 138, 86, 0.3);
 }
-  
+
 .card-content {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
-    background-color: #f2f2f2;
+    background: rgba(242, 242, 242, 0.95);
     transform: rotateX(-90deg);
     transform-origin: bottom;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-  
+
 .projeto01:hover .card-content {
     transform: rotateX(0deg);
 }
-  
+
 .card-title {
     margin: 0;
-    font-size: 24px;
-    color: #333;
+    font-size: 28px;
+    color: var(--card-text);
     font-weight: 700;
+    margin-bottom: 10px;
 }
-  
+
 .projeto01:hover svg {
     scale: 0;
 }
-  
+
 .card-description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
+    margin: 15px 0 0;
+    font-size: 16px;
+    color: var(--card-text);
+    line-height: 1.6;
 }
 .contato {
-    background-color: #f2f2f2;
+    background-color: var(--card-bg);
     padding: 20px;
     border-radius: 10px;
     margin-left: 545px;
     margin-right: 100px;
     margin-bottom: 20px;
     max-width: 90%; 
+    box-shadow: 0 8px 20px var(--shadow-color);
 }
   
 .contato label {
-    color: black;
+    color: var(--card-text);
 }
   
 .contato .heading {
@@ -262,6 +422,15 @@ html{
     margin-bottom: 10px;
 }
   
+.error-message {
+    color: #ff3860;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+  
 textarea {
     resize: none;
     height: 80px;
@@ -269,29 +438,46 @@ textarea {
 }
   
 .contato input, .contato textarea {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    font-size: 15px;
 }
   
 .contato input:focus, .contato textarea:focus {
     outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(56, 5, 166, 0.2);
+    transform: translateY(-2px);
 }
   
 .contato button[type="submit"] {
-    background-color: #A68A56;
+    background-color: var(--heading-primary);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 8px;
+    padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(166, 138, 86, 0.3);
 }
   
 .contato button[type="submit"]:hover {
-    transform: scale(1.04);
-    transition-duration: 0.5s;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(166, 138, 86, 0.4);
+    background-color: var(--accent-color);
+}
+  
+.contato button[type="submit"]:active {
+    transform: translateY(1px);
 }
 
 @media (max-width: 575.98px) {
@@ -482,11 +668,108 @@ textarea {
     }
 }
   
+#loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
 
+.loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.loader-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-top: 5px solid var(--heading-primary);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
 
-  
+.loader-circle:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 5px solid transparent;
+    border-bottom: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 2s linear infinite reverse;
+}
 
+.loader-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
+.loaded #loader-wrapper {
+    opacity: 0;
+    visibility: hidden;
+}
 
+.project-loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.project-loader-wrapper .loader {
+    animation: scaleUp 0.4s ease-out;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Preservar cores dos ícones no tema claro */
+[data-theme="light"] .linkedin {
+    color: #0e76a8 !important;
+}
+
+[data-theme="light"] .wpp {
+    color: #25D366 !important;
+}
+
+[data-theme="light"] .github {
+    color: #171515 !important;
+}
+
+[data-theme="light"] .nav-bar-perfil ul li svg {
+    color: #fff !important;
+}
+
+[data-theme="light"] .toggle-icon svg path {
+    fill: currentColor !important;
+}

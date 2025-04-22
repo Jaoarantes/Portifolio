@@ -2,8 +2,25 @@
     margin: 0px;
     font-family: 'Poppins', sans-serif;
 }
+
+:root {
+    --bg-color: #0D1826;
+    --text-color: #fff;
+    --heading-primary: #A68A56;
+    --accent-color: #3805A6;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --heading-primary: #A68A56;
+    --accent-color: #3805A6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 body{
-    background-color: #0D1826;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     margin-right: 0px;
@@ -23,7 +40,7 @@ html{
     border-radius: 30px;
 }
 .image-perfil{
-    background: linear-gradient(to bottom, #0D1826,#3805A6);
+    background: linear-gradient(to bottom, var(--bg-color), var(--accent-color));
     height: 300px;
     margin: 25px 65px 0px 65px;
     border-radius: 30px;
@@ -84,7 +101,7 @@ html{
     transform: scale(1.1);
 }
 .nav-bar-perfil{
-    background-color: #0D1826;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     border-radius: 15px;
@@ -98,7 +115,7 @@ html{
     gap: 30px;
 }
 .nav-bar-perfil ul li{
-    color: #fff;
+    color: var(--text-color);
     padding: 15px 0px 15px 0px;
     transition: transform 0.3s ease-in-out;
 }
@@ -117,10 +134,10 @@ html{
     max-width: calc(100% - 520px);
 }
 h1{
-    color: #A68A56;
+    color: var(--heading-primary);
 }
 p{
-    color: #fff;
+    color: var(--text-color);
     padding-left: 5px;
     font-size: 19px;
 }
@@ -136,13 +153,14 @@ img{
     gap: 150px;
 }
 button:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 .buttons button{
     width: 200px;
     height: 70px;
     border-radius: 30px;
-    background: #0D1826;
+    background: var(--bg-color);
     border: none;
     transition-duration: 0.5s;
     cursor: pointer;
@@ -150,8 +168,196 @@ button:hover{
 .buttons button svg{
     width: 35px;
 }
+.buttons button svg path {
+    fill: #fff;
+}
 .codigo-github{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+[data-theme="light"] .container-principal {
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+[data-theme="light"] .buttons button {
+    border: 2px solid var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+[data-theme="light"] .perfil {
+    background-color: #fff;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+[data-theme="light"] img {
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+[data-theme="light"] svg path {
+    fill: inherit;
+}
+
+/* Manter as cores originais dos ícones no tema claro */
+[data-theme="light"] .linkedin {
+    color: #0e76a8;
+}
+
+[data-theme="light"] .wpp {
+    color: #25D366;
+}
+
+[data-theme="light"] .github {
+    color: #171515;
+}
+
+[data-theme="light"] .nav-bar-perfil ul li svg {
+    color: #fff;
+}
+
+/* Garantir que os botões mantenham a cor correta no tema claro */
+[data-theme="light"] .buttons button svg path {
+    fill: #fff !important;
+}
+
+/* Regras específicas para os ícones dos botões */
+.codigo-github svg path {
+    fill: #fff !important;
+}
+
+/* Regras específicas para os botões no tema claro */
+[data-theme="light"] .codigo-github svg path {
+    fill: #fff !important;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 575.98px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .perfil {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+        height: auto;
+    }
+    .minha-foto {
+        margin-top: 0;
+    }
+    .container-principal {
+        margin-left: 0;
+        margin-top: 30px;
+        max-width: 100%;
+        padding: 15px;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .theme-switch {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .perfil {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin: 20px auto;
+        height: auto;
+    }
+    .container-principal {
+        margin-left: 0;
+        margin-top: 30px;
+        max-width: 100%;
+        padding: 20px;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .buttons {
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .perfil {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin: 20px auto;
+        height: auto;
+    }
+    .container-principal {
+        margin-left: 0;
+        margin-top: 30px;
+        max-width: 100%;
+        padding: 20px;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .buttons {
+        flex-direction: row;
+        gap: 50px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .perfil {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin: 20px auto;
+        height: auto;
+    }
+    .container-principal {
+        margin-left: 0;
+        margin-top: 30px;
+        max-width: 90%;
+        padding: 20px;
+        margin: 30px auto;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 800px;
+        display: block;
+        margin: 40px auto;
+    }
+    .buttons {
+        flex-direction: row;
+        gap: 50px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
